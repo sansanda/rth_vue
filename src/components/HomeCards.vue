@@ -1,10 +1,24 @@
 <script setup>
-import Card from '@/components/Card.vue'
-import { RouterLink } from 'vue-router';
+import Card from "@/components/Card.vue";
+import { RouterLink } from "vue-router";
 </script>
 <template>
-    <!-- Developers and Employers -->
-    <section class="py-4">
+  <section class="h-screen">
+    <div class="grid grid-cols-[300px_1fr] h-full">
+      <!-- COLUMNA IZQUIERDA -->
+      <div class="bg-gray-100 p-4 overflow-y-auto">
+        <Card @click="selected = 'comp1'">Componente 1</Card>
+        <Card @click="selected = 'comp2'">Componente 2</Card>
+        <Card @click="selected = 'comp3'">Componente 3</Card>
+      </div>
+
+      <!-- COLUMNA DERECHA -->
+      <div class="p-6">
+        <component :is="currentComponent" />
+      </div>
+    </div>
+  </section>
+  <!-- <section class="py-4">
         <div class="container-xl lg:container m-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg">
                 <Card bg="bg-green-100">
@@ -31,5 +45,5 @@ import { RouterLink } from 'vue-router';
                 </Card>
             </div>
         </div>
-    </section>
+    </section> -->
 </template>
