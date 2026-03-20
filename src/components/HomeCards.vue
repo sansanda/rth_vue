@@ -16,6 +16,9 @@ import { RouterLink } from 'vue-router';
                         Browse Jobs
                     </RouterLink>
                 </Card>
+                <Card bg="bg-green-100">
+                    <h2 class="text-2xl font-bold">-></h2>
+                </Card>
                 <Card>
                     <h2 class="text-2xl font-bold">For Employers</h2>
                     <p class="mt-2 mb-4">
