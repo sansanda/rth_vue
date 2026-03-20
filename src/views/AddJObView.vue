@@ -4,6 +4,7 @@ import { reactive } from 'vue';
 import router from "@/router/index"
 import { useToast } from 'vue-toastification';
 import { onMounted } from 'vue';
+import BackButton from '@/components/BackButton.vue';
 
 // window.addEventListener("beforeunload", () => {
 //   console.log("🔥 PAGE RELOAD DETECTED");
@@ -67,6 +68,7 @@ const handleFormSubmit = async (e) => {
 
 </script>
 <template>
+    <BackButton button-link="/" button-text="Back to Home"/>
     <section class="bg-green-50">
         <div class="container m-auto max-w-2xl py-24">
             <div class="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">

@@ -4,6 +4,7 @@ import {defineProps} from 'vue';
 import jobListing from '@/components/JobListing.vue'
 import axios from 'axios';
 import { PulseLoader } from 'vue-spinner'
+import BackButton from './BackButton.vue';
 
 defineProps({
   limit:Number,
@@ -34,6 +35,7 @@ onMounted(async ()=>{
 
 
 <template>
+  <BackButton button-link="/" button-text="Back to Home"></BackButton>
     <section class="bg-blue-50 px-4 py-10">
         <div class="container-xl lg:container m-auto">
             <h2 class=" text-3xl font-bold test-green-500 mb-6 text-center">
