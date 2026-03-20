@@ -4,6 +4,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import tailwindcss from '@tailwindcss/vite'
+import { watch } from 'node:fs'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -24,13 +25,16 @@ export default defineConfig({
     tailwindcss(),
   ],
   server:{
-    port: 8000,
+    port: 5173,
     proxy: {
       '/api':{
         target: 'http://localhost:5000',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/,''),
       },
+      watch:{
+        ignorePath: ['src/db/jobs.json']
+      }
     }
   },
   resolve: {

@@ -1,10 +1,13 @@
 <script setup>
 import { reactive, onMounted } from 'vue';
-import { useRoute, RouterLink } from 'vue-router';
+import { useRoute, RouterLink, useRouter } from 'vue-router';
 import { PulseLoader } from 'vue-spinner';
 import axios from 'axios';
 import BackButton from '@/components/BackButton.vue';
+import { useToast} from 'vue-toastification';
 
+const toast = useToast();
+const router = useRouter();
 const route = useRoute();
 const jobId = route.params.id;
 const state = reactive({
@@ -12,6 +15,16 @@ const state = reactive({
     isLoading: true
 });
 
+const deleteJob = async () => {
+    try {
+        await axios.delete(`/api/jobs/${jobId}`);
+        router.push('/jobs');
+        toast.success('Job deleted successfully');
+    } catch (error) {
+        console.log('Error deleting job', error);
+        toast.error('Error deleting the job');
+    }
+}
 onMounted(async () => {
     try {
         const response = await axios.get(`/api/jobs/${jobId}`);
@@ -86,7 +99,7 @@ onMounted(async () => {
                         <RouterLink :to="`/jobs/edit/${Number(jobId)}`"
                             class="bg-green-500 hover:bg-green-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">Edit
                             Job</RouterLink>
-                        <button
+                        <button @click="deleteJob"
                             class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
                             Delete Job
                         </button>

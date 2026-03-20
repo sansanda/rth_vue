@@ -1,45 +1,53 @@
 <script setup>
+import BackButton from '@/components/BackButton.vue';
+import { reactive, onMounted } from 'vue';
+import { useRoute, RouterLink, useRouter } from 'vue-router';
 import axios from 'axios';
-import { reactive } from 'vue';
-import router from "@/router/index"
 import { useToast } from 'vue-toastification';
-import { onMounted } from 'vue';
 
-// window.addEventListener("beforeunload", () => {
-//   console.log("🔥 PAGE RELOAD DETECTED");
-// });
-
-// window.addEventListener("submit", (e) => {
-//   console.log("GLOBAL SUBMIT", e);
-// });
-
+const route = useRoute();
+const router = useRouter();
+const jobId = route.params.id;
+const toast = useToast();
 const form = reactive({
-    type: 'Part-Time',
-    title: 'Test',
-    description: 'Descp',
-    salary: '$60K - $70K',
-    location: 'Myloc',
+    title: '',
+    type: '',
+    description: '',
+    location: '',
+    salary: '',
     company: {
-        name: 'somename',
-        description: 'somedescp',
-        contactPhone: 'somephone',
-        contactEmail: 'somemail@somemail.com'
+        name: '',
+        description: '',
+        contactEmail: '',
+        contactPhone: ''
     }
 });
 
-// onMounted(() => {
-//   console.log("COMPONENT MOUNTED");
-// });
+onMounted(async () => {
+    try {
+        const response = await axios.get(`/api/jobs/${jobId}`);
+        const jobData = response.data;
+        form.type = jobData.type;
+        form.title = jobData.title;
+        form.description = jobData.description;
+        form.location = jobData.location;
+        form.salary = jobData.salary;
+        form.company.name = jobData.company.name;
+        form.company.description = jobData.company.description;
+        form.company.contactEmail = jobData.company.contactEmail;
+        form.company.contactPhone = jobData.company.contactPhone;
+    } catch (error) {
+        console.log('error fetching the job', error);
+    }
 
-const toast = useToast();
-const delay = async (ms) => new Promise(resolve => setTimeout(resolve, ms));
+});
+
 const handleFormSubmit = async (e) => {
 
     e.preventDefault();
-    
+
     try {
-        
-        const newJob = {
+        const updatedJob = {
             title: form.title,
             type: form.type,
             location: form.location,
@@ -52,26 +60,24 @@ const handleFormSubmit = async (e) => {
                 contactEmail: form.company.contactEmail
             }
         };
-        const response = await axios.post("/api/jobs", newJob);
+        const response = await axios.put(`/api/jobs/${jobId}`, updatedJob);
 
-        //debugger;
-
-        toast.success("Job Added Successfully");
+        toast.success("Job Updated Successfully");
         router.push(`/jobs/${response.data.id}`);
     } catch (error) {
         console.log("error handling the form!!!")
-        toast.error('Job Was not Added')
+        toast.error('Job Was not Updated')
     };
 };
-
-
 </script>
+
 <template>
+    <BackButton />
     <section class="bg-green-50">
         <div class="container m-auto max-w-2xl py-24">
             <div class="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
                 <form @submit.prevent="handleFormSubmit">
-                    <h2 class="text-3xl text-center font-semibold mb-6">Add Job</h2>
+                    <h2 class="text-3xl text-center font-semibold mb-6">Edit Job</h2>
 
                     <div class="mb-4">
                         <label for="type" class="block text-gray-700 font-bold mb-2">Job Type</label>
@@ -152,8 +158,9 @@ const handleFormSubmit = async (e) => {
                     </div>
 
                     <button
-                        class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline" type="submit">
-                        Add Job
+                        class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
+                        type="submit">
+                        Edit Job
                     </button>
                 </form>
             </div>
