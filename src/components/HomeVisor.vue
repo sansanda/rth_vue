@@ -3,7 +3,7 @@ import { reactive, computed } from 'vue';
 import BackButton from './BackButton.vue';
 import Card from './Card.vue';
 import MultimeterComponent from './Multimeter/MultimeterComponent.vue';
-import SourceMeterComponent from './SourceMeterComponent.vue';
+import SourceMeterComponent from './SourceMeter/SourceMeterComponent.vue';
 import LimitsComponent from './LimitsComponent.vue';
 import ProcessComponent from './ProcessComponent.vue';
 import DataResultsComponent from './DataResultsComponent.vue';
