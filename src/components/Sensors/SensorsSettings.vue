@@ -1,4 +1,5 @@
 <script setup>
+const sensor_type_options = ["PT100"] // ["PT100", "PT1000", "RTD", "TK", "TJ"]
 const model = defineModel()
 </script>
 
@@ -6,11 +7,15 @@ const model = defineModel()
   <div class="mb-6 p-4 border rounded-lg">
     <h3 class="font-semibold mb-3">Temperature Sensor</h3>
 
-    <select v-model="model.type" class="input">
-      <option>PT100</option>
-      <option>PT1000</option>
-      <option>Thermocouple K</option>
-      <option>Thermocouple J</option>
-    </select>
+    <div class="max-w-md">
+      <div class="grid grid-cols-[150px_1fr] items-center gap-3">
+        <label>Type</label>
+        <select v-model="model.type" class="input w-full">
+          <option v-for="opt in sensor_type_options" :key="opt" :value="opt">
+            {{ opt }}
+          </option>
+        </select>
+      </div>
+    </div>
   </div>
 </template>

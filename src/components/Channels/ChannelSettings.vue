@@ -9,36 +9,23 @@ const model = defineModel();
   <div class="mb-6 p-4 border rounded-lg">
     <h3 class="font-semibold mb-3">{{ title }}</h3>
 
-    <div class="grid grid-cols-2 gap-4">
-      <div>
-        <label>Enabled</label>
-        <input type="checkbox" v-model="model.enabled" />
-      </div>
+    <div class="max-w-md">
+      <div class="grid gap-4">
 
-      <div>
-        <label>Range</label>
-        <select v-model="model.range" class="input">
-          <option>AUTO</option>
-          <option>100Ω</option>
-          <option>1kΩ</option>
-          <option>10kΩ</option>
-        </select>
-      </div>
+        <div class="grid grid-cols-[150px_1fr] items-center gap-3">
+          <label>Enabled</label>
+          <input type="checkbox" v-model="model.enabled" class="justify-self-start" />
+        </div>
 
-      <div>
-        <label>Channel Number</label>
-        <select v-model="model.number" class="input">
-          <option>101</option>
-          <option>102</option>
-          <option>102</option>
-          <option>104</option>
-          <option>105</option>
-          <option>106</option>
-          <option>107</option>
-          <option>108</option>
-          <option>109</option>
-          <option>110</option>
-        </select>
+        <div class="grid grid-cols-[150px_1fr] items-center gap-3">
+          <label>Channel Number</label>
+          <select v-model="model.number" class="input w-full">
+            <option v-for="n in model.numberOptions" :key="n" :value="n">
+              {{ n }}
+            </option>
+          </select>
+        </div>
+
       </div>
     </div>
   </div>
