@@ -4,7 +4,7 @@ const model = defineModel();
 
 <template>
   <div class="mb-6 p-4 border rounded-lg">
-    <h3 class="font-semibold mb-3">Current Limits Options</h3>
+    <h3 class="font-semibold mb-3">Current Limit Options</h3>
 
     <div class="max-w-md">
       <div class="grid gap-4">

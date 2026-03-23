@@ -4,7 +4,7 @@ const model = defineModel();
 
 <template>
   <div class="mb-6 p-4 border rounded-lg">
-    <h3 class="font-semibold mb-3">Temperature Limits Options</h3>
+    <h3 class="font-semibold mb-3">Temperature Limit Options</h3>
     <div class="max-w-md">
       <div class="grid gap-4">
         <div class="grid grid-cols-[200px_1fr] items-center gap-3">
