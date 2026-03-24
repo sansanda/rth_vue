@@ -12,13 +12,13 @@ const model = defineModel();
         <div class="grid grid-cols-[150px_1fr] items-center gap-3">
           <label title="Select the address of the multimeter">Address</label>
           <input type="number" v-model="model.address" :min="model.address_min" :max="model.address_max"
-            :step="model.address_step" class="justify-self-start"/>
+            :step="model.address_step" class="justify-self-start border rounded-md"/>
         </div>
 
         <div class="grid grid-cols-[150px_1fr] items-center gap-3">
           <label>Timeout (ms)</label>
           <input type="number" v-model="model.timeout" :min="model.timeout_min" :max="model.timeout_max"
-            :step="model.timeout_step" class="justify-self-start" />
+            :step="model.timeout_step" class="justify-self-start border rounded-md" />
         </div>
       </div>
     </div>

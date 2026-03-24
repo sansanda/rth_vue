@@ -34,7 +34,7 @@ const model = defineModel();
             :step="model.filter_window_step"
             :min="model.filter_window_min"
             :max="model.filter_window_max"
-            class="w-full"
+            class="justify-self-start border rounded-md"
           />
         </div>
 
@@ -46,7 +46,7 @@ const model = defineModel();
             :step="model.filter_count_step"
             :min="model.filter_count_min"
             :max="model.filter_count_max"
-            class="w-full"
+            class="justify-self-start border rounded-md"
           />
         </div>
 

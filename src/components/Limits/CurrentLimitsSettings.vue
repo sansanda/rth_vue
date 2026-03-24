@@ -16,7 +16,7 @@ const model = defineModel();
             :step="model.max_current_step"
             :min="model.max_current_min"
             :max="model.max_current_max"
-            class="w-full"
+            class="justify-self-start border rounded-md"
           />
         </div>
       </div>

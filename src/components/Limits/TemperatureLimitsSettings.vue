@@ -15,7 +15,7 @@ const model = defineModel();
             :step="model.max_temperature_step"
             :min="model.max_temperature_min"
             :max="model.max_temperature_max"
-            class="w-full"
+            class="justify-self-start border rounded-md"
           />
         </div>
       </div>

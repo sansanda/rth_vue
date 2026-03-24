@@ -16,7 +16,7 @@ const model = defineModel();
             :step="model.current_step"
             :min="model.current_min"
             :max="model.current_max"
-            class="w-full"
+            class="justify-self-start border rounded-md"
           />
         </div>
 
@@ -28,7 +28,7 @@ const model = defineModel();
             :step="model.voltage_compliance_step"
             :min="model.voltage_compliance_min"
             :max="model.voltage_compliance_max"
-            class="w-full"
+            class="justify-self-start border rounded-md"
           />
         </div>
         <div class="grid grid-cols-[200px_1fr] items-center gap-3">
@@ -39,7 +39,7 @@ const model = defineModel();
             :step="model.delay_ms_step"
             :min="model.delay_ms_min"
             :max="model.delay_ms_max"
-            class="w-full"
+            class="justify-self-start border rounded-md"
           />
         </div>
       </div>

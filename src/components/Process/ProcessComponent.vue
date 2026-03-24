@@ -21,4 +21,4 @@ const processConfig = reactive(createDefaultProcessConfig());
     <RampDownSettings v-model="processConfig.TemperatureRampDown" />
     <EndProcessSettings v-model="processConfig.End"/>
   </div>
-</template>
+</template> 

@@ -6,7 +6,7 @@ import MultimeterComponent from "../components/Multimeter/MultimeterComponent.vu
 import SourceMeterComponent from "../components/SourceMeter/SourceMeterComponent.vue";
 import LimitsComponent from "../components/Limits/LimitsComponent.vue";
 import ProcessComponent from "../components/Process/ProcessComponent.vue";
-import DataResultsComponent from "../components/DataResultsComponent.vue";
+import MeasureResultsComponent from "../components/MeasureResults/MeasureResultsComponent.vue";
 
 const state = reactive({
   selectedComponent: "MultimeterComponent",
@@ -17,7 +17,7 @@ const componentsMap = {
   SourceMeterComponent,
   LimitsComponent,
   ProcessComponent,
-  DataResultsComponent,
+  MeasureResultsComponent,
 };
 
 const componentsList = [
@@ -25,7 +25,7 @@ const componentsList = [
   { key: "SourceMeterComponent", label: "Source Meter Setup" },
   { key: "LimitsComponent", label: "Limits Setup" },
   { key: "ProcessComponent", label: "Process Setup" },
-  { key: "DataResultsComponent", label: "Data Results" },
+  { key: "MeasureResultsComponent", label: "Measure Results" },
 ];
 
 const currentComponent = computed(

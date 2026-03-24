@@ -27,7 +27,21 @@ export function createDefaultProcessConfig() {
       time_to_step: 1,
     },
     MeasureParameters: {
-
+      n_measures: 15,
+      n_measures_default: 15,
+      n_measures_min: 1,
+      n_measures_max: 100,
+      n_measures_step: 1,
+      sample_period: 120, //seconds
+      sample_period_default: 120,
+      sample_period_min: 1,
+      sample_period_max: 1200,
+      sample_period_step: 1,
+      time_betwwen_channels: 100, //ms
+      time_betwwen_channels_default: 100,
+      time_betwwen_channels_min: 100,
+      time_betwwen_channels_max: 1000,
+      time_betwwen_channels_step: 100,
     },
     TemperatureRampDown: {
       //minutes
