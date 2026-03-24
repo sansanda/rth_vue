@@ -5,7 +5,7 @@ import Sidebar from "../components/SideBar.vue";
 import MultimeterComponent from "../components/Multimeter/MultimeterComponent.vue";
 import SourceMeterComponent from "../components/SourceMeter/SourceMeterComponent.vue";
 import LimitsComponent from "../components/Limits/LimitsComponent.vue";
-import ProcessComponent from "../components/ProcessComponent.vue";
+import ProcessComponent from "../components/Process/ProcessComponent.vue";
 import DataResultsComponent from "../components/DataResultsComponent.vue";
 
 const state = reactive({
