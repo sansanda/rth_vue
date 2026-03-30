@@ -12,14 +12,14 @@ const model = defineModel();
     <div class="max-w-md">
       <div class="grid gap-4">
 
-        <div class="grid grid-cols-[150px_1fr] items-center gap-3">
+        <div class="grid grid-cols-[200px_1fr] items-center gap-3">
           <label>Enabled</label>
           <input type="checkbox" v-model="model.enabled" class="justify-self-start" />
         </div>
 
-        <div class="grid grid-cols-[150px_1fr] items-center gap-3">
-          <label>Channel Number</label>
-          <select v-model="model.number" class="input w-full">
+        <div class="grid grid-cols-[200px_1fr] items-center gap-3">
+          <label>K2700 Channel Number</label>
+          <select v-model="model.number" class="input w-min">
             <option v-for="n in model.numberOptions" :key="n" :value="n">
               {{ n }}
             </option>

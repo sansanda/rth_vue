@@ -20,7 +20,7 @@ const model = defineModel();
 
         <div class="grid grid-cols-[150px_1fr] items-center gap-3">
           <label>Filter Type</label>
-          <select v-model="model.filter_type" class="input w-full">
+          <select v-model="model.filter_type" class="input w-min">
             <option>Moving</option>
             <option>Repeat</option>
           </select>

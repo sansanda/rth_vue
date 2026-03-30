@@ -15,8 +15,8 @@ const multimeterConfig = reactive(createDefaultMultimeterConfig());
   <div>
     <h2 class="text-2xl font-bold mb-6">Multimeter Setup</h2>
     <GpibSettings v-model="multimeterConfig.gpib" />
-    <ChannelSettings title="Top Channel (Copper Spreader)" v-model="multimeterConfig.channels.top" />
-    <ChannelSettings title="Bottom Channel Aluminium HeatSink" v-model="multimeterConfig.channels.bottom" />
+    <ChannelSettings title="Top PT100 Sensor (Copper Spreader)" v-model="multimeterConfig.channels.top" />
+    <ChannelSettings title="Bottom PT100 Sensor (Aluminium HeatSink)" v-model="multimeterConfig.channels.bottom" />
     <SensorsSettings v-model="multimeterConfig.sensor" />
     <FiltersSettings v-model="multimeterConfig.filter" />
   </div>

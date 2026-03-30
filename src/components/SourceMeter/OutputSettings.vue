@@ -15,7 +15,7 @@ const model = defineModel();
             v-model="model.enabled"
             class="justify-self-start"/>
           <label>Output Connection</label>
-          <select v-model="model.connection" class="input w-full">
+          <select v-model="model.connection" class="input w-min">
             <option v-for="c in model.connectionOptions" :key="c" :value="c">
               {{ c }}
             </option>

@@ -10,7 +10,7 @@ const model = defineModel();
       <div class="grid gap-4">
         <div class="grid grid-cols-[150px_1fr] items-center gap-3">
           <label>Range (Volts)</label>
-          <select v-model="model.range" class="input w-full">
+          <select v-model="model.range" class="input w-min">
             <option v-for="r in model.range_options" :key="r" :value="r">
               {{ r }}
             </option>
@@ -19,7 +19,7 @@ const model = defineModel();
 
         <div class="grid grid-cols-[150px_1fr] items-center gap-3">
           <label>NPLC</label>
-          <select v-model="model.nplc" class="input w-full">
+          <select v-model="model.nplc" class="input w-min">
             <option
               v-for="nplc in model.nplc_options"
               :key="nplc"

@@ -12,9 +12,10 @@ export function createDefaultMeasureResultsConfig() {
       autosave_period_step: 1,
     },
     filePath: {
-      //celsius and minutes
+      //
       path: ".",
       default_path: ".",
+      enable_timestamp: true,
     },
   };
 }

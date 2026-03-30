@@ -7,8 +7,12 @@ const model = defineModel();
         <div class="max-w-md">
             <div class="grid gap-4">
                 <div class="grid grid-cols-[150px_1fr] items-center gap-3">
-                    <label title="Indicate the phone number in case of send message option">Folder Path</label>
+                    <label title="Indicate the destination folder">Folder Path</label>
                     <input type="text" v-model="model.path" class="justify-self-start border rounded-md" />
+                </div>
+                <div class="grid grid-cols-[150px_1fr] items-center gap-3">
+                    <label>Enable Timestamp</label>
+                    <input type="checkbox" v-model="model.enable_timestamp" class="justify-self-start" />
                 </div>
             </div>
         </div>

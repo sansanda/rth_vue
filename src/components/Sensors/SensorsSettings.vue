@@ -5,12 +5,12 @@ const model = defineModel()
 
 <template>
   <div class="mb-6 p-4 border rounded-lg">
-    <h3 class="font-semibold mb-3">Temperature Sensor</h3>
+    <h3 class="font-semibold mb-3">Temperature Sensors</h3>
 
     <div class="max-w-md">
-      <div class="grid grid-cols-[150px_1fr] items-center gap-3">
+      <div class="grid grid-cols-[100px_1fr] items-center gap-3">
         <label>Type</label>
-        <select v-model="model.type" class="input w-full">
+        <select v-model="model.type" class="input w-min">
           <option v-for="opt in sensor_type_options" :key="opt" :value="opt">
             {{ opt }}
           </option>
