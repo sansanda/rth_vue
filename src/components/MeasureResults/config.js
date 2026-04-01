@@ -4,6 +4,7 @@ export function createDefaultMeasureResultsConfig() {
       name: "rth",
       extension: "dat",
       name_format: "dd-mm-aaaa-hh-mm-ss",
+      enableTimestamp: true,
       autosave: true,
       autosave_period: 1, //mins
       autosave_period_default: 1,

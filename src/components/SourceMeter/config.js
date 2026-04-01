@@ -1,14 +1,13 @@
 const connectionValues = ["REAR","FRONT"];
 const nplcValues = [0.01,0.1,1,10];
 const measureRangeValues = [0.2,2,20,100];
+const availableGPIBAddresses = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+
 export function createDefaultSourceConfig() {
   return {
     gpib: {
       address: 17,
-      address_default: 16,
-      address_min: 1,
-      address_max: 30,
-      address_step: 1,
+      addressOptions: availableGPIBAddresses,
       timeout: 5000,
       timeout_default: 5000,
       timeout_min: 1000,
