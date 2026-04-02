@@ -42,6 +42,8 @@ export function createDefaultProcessConfig() {
       time_betwwen_channels_min: 100,
       time_betwwen_channels_max: 1000,
       time_betwwen_channels_step: 100,
+      channels: ["top", "bottom"]
+      // channels se gestionan en backend, no tocar para evitar romperlo
     },
     TemperatureRampDown: {
       //minutes
@@ -54,6 +56,12 @@ export function createDefaultProcessConfig() {
     End: {
       send_message: true,
       phone_number: "661290548",
+    },
+    Safety: {
+      stop_on_current_limit: true,
+      max_current: 1.1,
+      cooldown_on_overtemp: true,
+      max_temperature: 60
     },
   };
 }
